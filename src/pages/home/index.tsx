@@ -46,9 +46,13 @@ export default function Home() {
   ]
   return (
     <div className="p-[10px]">
-      <Button type={'primary'} className={'ml-1'} onClick={handleSync}>
-        同步数据
-      </Button>
+      <div className="flex justify-between mb-10px">
+        <div></div>
+        <Button type={'primary'} onClick={handleSync}>
+          同步数据
+        </Button>
+      </div>
+
       <Table loading={loading} dataSource={data} columns={columns} rowKey={'id'}></Table>
     </div>
   )

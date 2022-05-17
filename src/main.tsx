@@ -26,7 +26,7 @@ ReactDOM.render(
               </Menu.Item>
             ))}
           </Menu>
-          <div className="flex-1 bg-white">
+          <div className="flex-1">
             <Suspense fallback={<div></div>}>
               <Routes>
                 {transformRoutes.map((route) => (

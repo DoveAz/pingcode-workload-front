@@ -46,7 +46,7 @@ export default function Home() {
   ]
   return (
     <div className="p-[10px]">
-      <div className="flex justify-between mb-10px">
+      <div className="flex justify-between mb-[10px]">
         <div></div>
         <Button type={'primary'} onClick={handleSync}>
           同步数据

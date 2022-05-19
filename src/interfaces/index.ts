@@ -13,6 +13,7 @@ export interface User {
 export interface Project {
   id: string
   name: string
+  identifier: string
   remark: any
   status: number
   isDeleted: boolean

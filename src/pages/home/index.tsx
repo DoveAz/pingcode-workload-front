@@ -24,6 +24,16 @@ export default function Home() {
     {
       title: '工作项',
       dataIndex: 'workItemTitle',
+      render: (text: string, record: Workload) => {
+        return (
+          <a
+            href={`https://lingyusoft.pingcode.com/pjm/items/${record.workItemId}`}
+            target="_blank"
+            rel="noreferrer">
+            {text}
+          </a>
+        )
+      },
     },
     {
       title: '工时',

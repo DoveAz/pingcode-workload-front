@@ -17,7 +17,7 @@ export function createService(baseURL: string): AxiosInstance {
 
   service.interceptors.response.use(
     (response) => {
-      return response.data
+      return response
     },
     (error) => {
       // do something with response error

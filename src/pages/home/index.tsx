@@ -39,6 +39,7 @@ export default function Home() {
         }),
     {
       refreshDeps: [activeUserId, date],
+      defaultPageSize: 50,
     },
   )
 

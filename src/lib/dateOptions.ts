@@ -1,6 +1,14 @@
 import dayjs from 'dayjs'
 
-export const dateOptions = [
+type DateOption = {
+  label: string
+  value: number
+  conditions: {
+    [key: string]: any
+  }
+}
+
+export const dateOptions: DateOption[] = [
   {
     label: '今天',
     value: 1,

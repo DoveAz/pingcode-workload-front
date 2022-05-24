@@ -55,6 +55,10 @@ export default function Home() {
       dataIndex: ['project', 'name'],
     },
     {
+      title: '编号',
+      dataIndex: 'workItemIdentifier',
+    },
+    {
       title: '工作项',
       dataIndex: 'workItemTitle',
       render: (text: string, record: Workload) => {

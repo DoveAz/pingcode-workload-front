@@ -7,7 +7,7 @@ import { service } from '../../plugins/service'
 export default function Chart() {
   const [option, setOption] = useSetState({
     title: {
-      text: 'Stacked Line',
+      text: '工时折线图(每周)',
     },
     tooltip: {
       trigger: 'axis',

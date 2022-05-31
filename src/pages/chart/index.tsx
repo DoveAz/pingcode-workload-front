@@ -98,8 +98,8 @@ export default function Chart() {
   }, [])
   return (
     <div className="p-[15px]">
-      <ReactECharts option={option1} notMerge lazyUpdate theme={'theme_name'} className="bg-white p-[15px]" />
-      <ReactECharts option={option2} notMerge lazyUpdate theme={'theme_name'} className="bg-white p-[15px] mt-[15px]" />
+      <ReactECharts option={option2} notMerge lazyUpdate theme={'theme_name'} className="bg-white p-[15px]" />
+      <ReactECharts option={option1} notMerge lazyUpdate theme={'theme_name'} className="bg-white p-[15px]  mt-[15px]" />
     </div>
   )
 }

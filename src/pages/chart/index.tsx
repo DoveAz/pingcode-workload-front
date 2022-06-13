@@ -1,6 +1,6 @@
 import { useSetState } from 'ahooks'
 import ReactECharts from 'echarts-for-react'
-import { map } from 'lodash'
+import { map, sortBy } from 'lodash'
 import { useEffect } from 'react'
 
 import { service } from '../../plugins/service'
@@ -70,6 +70,9 @@ export default function Chart() {
   })
   useEffect(function () {
     service.post('workload/chart').then((res) => {
+      res.data.current = sortBy(res.data.current, 'user.displayName').reverse()
+      res.data.prev = sortBy(res.data.prev, 'user.displayName').reverse()
+      console.log(res.data)
       setOption1({
         legend: {
           data: map(res.data.current, 'user.displayName'),
@@ -99,7 +102,13 @@ export default function Chart() {
   return (
     <div className="p-[15px]">
       <ReactECharts option={option2} notMerge lazyUpdate theme={'theme_name'} className="bg-white p-[15px]" />
-      <ReactECharts option={option1} notMerge lazyUpdate theme={'theme_name'} className="bg-white p-[15px]  mt-[15px]" />
+      <ReactECharts
+        option={option1}
+        notMerge
+        lazyUpdate
+        theme={'theme_name'}
+        className="bg-white p-[15px]  mt-[15px]"
+      />
     </div>
   )
 }

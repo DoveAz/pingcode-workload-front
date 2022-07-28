@@ -1,5 +1,6 @@
 import { useAntdTable } from 'ahooks'
 import { Button, Radio, Table } from 'antd'
+import copy from 'copy-to-clipboard'
 import Decimal from 'decimal.js'
 import { find, map } from 'lodash'
 import React, { useEffect, useState } from 'react'
@@ -42,6 +43,15 @@ export default function Home() {
       defaultPageSize: 50,
     },
   )
+
+  function handleCopy() {
+    console.log(tableProps)
+    copy(
+      tableProps.dataSource
+        .map((item) => `${item.project.name}(${item.workItemIdentifier})：${item.workItemTitle}`)
+        .join('\n'),
+    )
+  }
 
   function handleSync() {
     service.post('workload/sync').then(() => {
@@ -132,9 +142,14 @@ export default function Home() {
             buttonStyle="solid"
           />
         </div>
-        <Button type={'primary'} onClick={handleSync}>
-          同步数据
-        </Button>
+        <div>
+          <Button onClick={handleCopy} className="mr-4">
+            复制
+          </Button>
+          <Button type={'primary'} onClick={handleSync}>
+            同步数据
+          </Button>
+        </div>
       </div>
 
       <Table
